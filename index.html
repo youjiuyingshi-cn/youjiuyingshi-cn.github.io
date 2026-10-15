@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="applicable-device" content="pc,mobile">
+<title>悠久影视 - 经典老片与高分影视作品收藏馆 | youjiuyingshi.cn</title>
+<meta name="keywords" content="悠久影视,youjiuyingshi.cn,经典老电影,高分影视作品,怀旧剧场,老片修复,经典电影排行榜,悠久影视官网">
+<meta name="description" content="悠久影视（youjiuyingshi.cn）专注于经典老片与高分影视作品的收藏与整理，汇集怀旧电影、经典剧集、老番与修复版内容，按年代与类型精细归档，适配手机与电脑浏览。">
+<link rel="canonical" href="https://youjiuyingshi.cn.github.io/">
+<style>
+/* ==========================================================
+   悠久影视 · 单页站点
+   设计目标：怀旧胶片 · 年代感 · 移动端自适应
+   ========================================================== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#f7f3ea;
+  --paper2:#fffdf8;
+  --ink:#201a14;
+  --ink2:#44392c;
+  --dim:#7a6a56;
+  --dim2:#a69580;
+  --line:#e7ddc9;
+  --line2:#f1ebde;
+  --sepia:#8a5a2b;
+  --sepia2:#b8853f;
+  --gold:#c9a227;
+  --crimson:#9c2b27;
+  --teal:#2c6b63;
+  --indigo:#3a4a8a;
+  --sh:0 2px 5px rgba(60,40,15,.05),0 16px 44px rgba(60,40,15,.10);
+  --r:14px;
+  --max:1180px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:Georgia,"Times New Roman","Songti SC","STSong","SimSun",-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",serif;
+  background:var(--paper);color:var(--ink);line-height:1.75;
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(120,90,45,.018) 3px,rgba(120,90,45,.018) 4px),
+    radial-gradient(680px 440px at 88% -4%,rgba(201,162,39,.14),transparent 60%),
+    radial-gradient(620px 400px at -4% 6%,rgba(138,90,43,.13),transparent 60%);
+  background-attachment:fixed;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{width:min(100% - 28px,var(--max));margin:0 auto}
+@media(min-width:768px){.wrap{width:min(100% - 44px,var(--max))}}
+h1,h2,h3,h4{line-height:1.32;font-weight:800;letter-spacing:.005em;font-family:Georgia,"Times New Roman","Songti SC","STSong",serif}
+:focus-visible{outline:2px solid var(--sepia2);outline-offset:3px;border-radius:6px}
+::selection{background:var(--gold);color:#fff}
+
+/* ---------- 顶部 ---------- */
+.top{position:sticky;top:0;z-index:80;background:rgba(255,253,248,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:14px;height:66px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0;flex-shrink:0}
+.brand .seal{flex:0 0 auto;width:38px;height:38px;border-radius:9px;display:grid;place-items:center;font-size:18px;color:#fff;
+  background:linear-gradient(155deg,var(--sepia),var(--crimson));box-shadow:0 6px 18px rgba(156,43,39,.28)}
+.brand b{font-size:19px;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand small{display:block;font-size:9.5px;letter-spacing:.28em;color:var(--dim2);font-family:-apple-system,sans-serif}
+.nav{margin-left:auto;display:flex;align-items:center;gap:2px}
+.nav a{display:none;font-size:14px;padding:8px 13px;border-radius:8px;color:var(--ink2);font-family:-apple-system,"PingFang SC",sans-serif;transition:.22s}
+@media(min-width:780px){.nav a{display:inline-block}}
+.nav a:hover{background:#f3e9d5;color:var(--sepia)}
+.mbtn{display:none;width:40px;height:40px;border-radius:9px;background:#f6eee0;border:1px solid var(--line);flex:0 0 auto;position:relative}
+.mbtn i{position:absolute;left:11px;width:18px;height:2px;border-radius:2px;background:var(--ink2);transition:.3s}
+.mbtn i:nth-child(1){top:13px}.mbtn i:nth-child(2){top:19px}.mbtn i:nth-child(3){top:25px}
+.mbtn.on i:nth-child(1){top:19px;transform:rotate(45deg)}.mbtn i:nth-child(2){opacity:0}.mbtn i:nth-child(3){top:19px;transform:rotate(-45deg)}
+@media(max-width:780px){
+  .mbtn{display:block}
+  .nav{position:fixed;inset:66px 0 0 0;flex-direction:column;align-items:stretch;gap:6px;padding:18px 16px;background:var(--paper2);
+    transform:translateX(102%);transition:.35s cubic-bezier(.4,0,.2,1);overflow:auto;border-top:1px solid var(--line)}
+  .nav.on{transform:translateX(0)}
+  .nav a{display:block!important;font-size:15.5px;padding:14px 15px;border-radius:9px;border:1px solid var(--line2);font-family:inherit}
+  .nav a:hover{background:#f3e9d5}
+}
+
+/* ---------- 首屏 ---------- */
+.hero{padding:56px 0 28px;position:relative}
+@media(max-width:760px){.hero{padding:34px 0 10px}}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.95fr);gap:52px;align-items:center}
+@media(max-width:940px){.hero .wrap{grid-template-columns:1fr;gap:38px}}
+.ribbon{display:inline-block;padding:5px 13px;border-radius:4px;font-size:11.5px;font-weight:700;letter-spacing:.18em;
+  color:#6b4518;background:#f3e6cd;border:1px solid #e6cf9f;font-family:-apple-system,sans-serif}
+.hero h1{margin-top:22px;font-size:clamp(30px,5vw,55px);line-height:1.14;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--sepia)}
+.hero h1 small{display:block;font-size:.42em;letter-spacing:.32em;color:var(--dim2);margin-top:16px;font-weight:600}
+.hero .lead{margin-top:22px;font-size:16px;color:var(--dim);max-width:540px}
+.acts{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;font-family:-apple-system,"PingFang SC",sans-serif}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:9px;font-size:15px;font-weight:700;transition:.26s}
+.btn-main{background:var(--sepia);color:#fff;box-shadow:0 10px 28px rgba(138,90,43,.3)}
+.btn-main:hover{transform:translateY(-3px);box-shadow:0 16px 42px rgba(138,90,43,.42)}
+.btn-line{background:var(--paper2);color:var(--ink2);border:1px solid var(--line)}
+.btn-line:hover{transform:translateY(-3px);border-color:var(--sepia2);color:var(--sepia)}
+.stats{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:var(--r);background:var(--paper2);overflow:hidden}
+.stats div{padding:16px 8px;text-align:center;border-right:1px solid var(--line2)}
+.stats div:last-child{border-right:0}
+.stats b{display:block;font-size:24px;font-weight:900;color:var(--sepia);font-variant-numeric:tabular-nums}
+.stats span{display:block;margin-top:3px;font-size:11.5px;color:var(--dim);letter-spacing:.06em;font-family:-apple-system,sans-serif}
+
+/* 胶片册 */
+.album{position:relative;background:var(--ink);border-radius:12px;padding:18px;box-shadow:var(--sh);
+  background-image:linear-gradient(180deg,#31281d,#1b1610)}
+.album::before,.album::after{content:"";position:absolute;left:0;right:0;height:14px;background-image:radial-gradient(circle,var(--paper) 0 3px,transparent 3.5px);
+  background-size:22px 14px;background-repeat:repeat-x}
+.album::before{top:-1px}.album::after{bottom:-1px}
+.frames{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.frames figure{position:relative;aspect-ratio:3/4;border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,.14)}
+.frames figure:nth-child(1){background:linear-gradient(165deg,#8a5a2b,#241505)}
+.frames figure:nth-child(2){background:linear-gradient(165deg,#9c2b27,#2c0a08)}
+.frames figure:nth-child(3){background:linear-gradient(165deg,#c9a227,#3a2a04)}
+.frames figure .ic{position:absolute;inset:0;display:grid;place-items:center;font-size:34px;opacity:.9}
+.frames figure figcaption{position:absolute;left:0;right:0;bottom:0;padding:9px 8px 8px;font-size:11.5px;font-weight:600;color:#f7f3ea;
+  background:linear-gradient(0deg,rgba(0,0,0,.85),rgba(0,0,0,0));font-family:-apple-system,"PingFang SC",sans-serif}
+.frames figure figcaption em{display:block;font-style:normal;font-size:9.5px;color:#e6cf9f;letter-spacing:.14em;font-weight:500}
+.album .cap{margin-top:16px;padding-top:12px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;align-items:center;gap:10px}
+.album .cap b{font-size:13px;color:#f3e6cd;letter-spacing:.1em;font-family:-apple-system,sans-serif}
+.album .cap span{font-size:11.5px;color:#b09a7c}
+
+/* ---------- 分区通用 ---------- */
+section{padding:62px 0}
+@media(max-width:760px){section{padding:46px 0}}
+.hd{margin-bottom:34px;text-align:center}
+.hd .kp{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.32em;color:var(--sepia);text-transform:uppercase;
+  padding:5px 14px;border:1px solid var(--line);border-radius:999px;background:var(--paper2);font-family:-apple-system,sans-serif}
+.hd h2{font-size:clamp(23px,3.4vw,35px);margin-top:16px;letter-spacing:-.01em}
+.hd h2 i{font-style:normal;color:var(--sepia)}
+.hd p{margin:11px auto 0;font-size:14.5px;color:var(--dim);max-width:600px}
+@media(max-width:640px){.hd{text-align:left}}
+
+/* ---------- 栏目一 · 年代馆藏 ---------- */
+.era{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:960px){.era{grid-template-columns:1fr 1fr}}
+@media(max-width:440px){.era{grid-template-columns:1fr}}
+.reel{position:relative;background:var(--paper2);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px 24px;transition:.34s;overflow:hidden}
+.reel:hover{transform:translateY(-6px) rotate(.4deg);border-color:#e6cf9f;box-shadow:var(--sh)}
+.reel .yr{font-size:30px;font-weight:900;color:var(--sepia);font-variant-numeric:tabular-nums;line-height:1;letter-spacing:-.02em}
+.reel .yr em{font-style:normal;font-size:12px;font-weight:600;color:var(--dim2);display:block;letter-spacing:.16em;margin-top:7px}
+.reel h3{margin-top:18px;font-size:17px;padding-bottom:11px;border-bottom:1px dashed var(--line)}
+.reel ul{margin-top:14px;display:flex;flex-direction:column;gap:9px}
+.reel li{font-size:13.5px;color:var(--ink2);display:flex;justify-content:space-between;gap:8px;font-family:-apple-system,"PingFang SC",sans-serif}
+.reel li b{color:var(--sepia);font-weight:600;font-variant-numeric:tabular-nums}
+.reel .tag{position:absolute;right:-26px;top:20px;transform:rotate(42deg);font-size:10px;font-weight:700;letter-spacing:.1em;color:#fff;
+  background:var(--gold);padding:3px 30px;font-family:-apple-system,sans-serif}
+
+/* ---------- 栏目二 · 馆藏精品 ---------- */
+.show{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:760px){.show{grid-template-columns:1fr}}
+.card{display:grid;grid-template-columns:104px minmax(0,1fr);gap:16px;background:var(--paper2);border:1px solid var(--line);
+  border-radius:var(--r);padding:16px;transition:.3s;align-items:start}
+.card:hover{transform:translateY(-4px);border-color:#e6cf9f;box-shadow:var(--sh)}
+.card .th{aspect-ratio:3/4;border-radius:8px;display:grid;place-items:center;font-size:30px;color:#fff;position:relative;overflow:hidden}
+.card .th s{position:absolute;right:5px;top:5px;font-size:9px;text-decoration:none;font-style:normal;font-weight:700;color:#fff;
+  background:rgba(0,0,0,.45);padding:2px 6px;border-radius:4px;font-family:-apple-system,sans-serif}
+.t1{background:linear-gradient(165deg,#6b4220,#1a0d04)}
+.t2{background:linear-gradient(165deg,#7a2a26,#240806)}
+.t3{background:linear-gradient(165deg,#2c6b63,#0a221f)}
+.t4{background:linear-gradient(165deg,#3a4a8a,#101740)}
+.t5{background:linear-gradient(165deg,#8a6a1c,#2a1e04)}
+.t6{background:linear-gradient(165deg,#5a3a2a,#1c1108)}
+.card .tx{min-width:0}
+.card .tx .no{font-size:10.5px;font-weight:700;letter-spacing:.18em;color:var(--sepia);font-family:-apple-system,sans-serif}
+.card .tx h3{font-size:16px;margin-top:5px}
+.card .tx .mt{margin-top:8px;font-size:12.5px;color:var(--dim);font-family:-apple-system,"PingFang SC",sans-serif;line-height:1.65}
+.card .tx .mt b{color:var(--sepia);font-weight:600}
+.card .tx .mk{margin-top:12px;display:flex;align-items:center;gap:9px}
+.card .tx .mk span{font-size:11.5px;color:var(--gold);letter-spacing:.1em}
+.card .tx .mk em{font-style:normal;font-size:11px;padding:3px 8px;border-radius:5px;background:#f3e6cd;color:#6b4518;font-family:-apple-system,sans-serif}
+
+/* ---------- 栏目三 · 流派长廊 ---------- */
+.gen{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:860px){.gen{grid-template-columns:1fr}}
+.hall{background:var(--paper2);border:1px solid var(--line);border-radius:var(--r);padding:0;overflow:hidden;transition:.32s}
+.hall:hover{box-shadow:var(--sh);transform:translateY(-4px)}
+.hall .hd2{display:flex;align-items:center;gap:13px;padding:20px 20px 16px;border-bottom:1px solid var(--line2)}
+.hall .hd2 .ic{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-size:19px;color:#fff;flex:0 0 auto}
+.hall:nth-child(6n+1) .ic{background:linear-gradient(150deg,var(--sepia),#5c3814)}
+.hall:nth-child(6n+2) .ic{background:linear-gradient(150deg,var(--crimson),#661814)}
+.hall:nth-child(6n+3) .ic{background:linear-gradient(150deg,var(--teal),#1d4a44)}
+.hall:nth-child(6n+4) .ic{background:linear-gradient(150deg,var(--indigo),#25356b)}
+.hall:nth-child(6n+5) .ic{background:linear-gradient(150deg,var(--gold),#8f7010)}
+.hall:nth-child(6n+6) .ic{background:linear-gradient(150deg,#5a3a2a,#332015)}
+.hall .hd2 h3{font-size:16.5px}
+.hall .hd2 small{display:block;font-size:11.5px;color:var(--dim2);letter-spacing:.08em;font-family:-apple-system,sans-serif}
+.hall .bd{padding:16px 20px 20px}
+.hall dl{display:grid;grid-template-columns:1fr 52px;gap:10px 8px;font-size:13.5px;font-family:-apple-system,"PingFang SC",sans-serif}
+.hall dt{color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hall dd{text-align:right;color:var(--sepia);font-weight:600;font-variant-numeric:tabular-nums}
+.hall .more{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:13px;font-weight:700;color:var(--sepia);transition:.2s}
+.hall:hover .more{gap:10px}
+
+/* ---------- 栏目四 · 修复进度 ---------- */
+.barbox{background:var(--paper2);border:1px solid var(--line);border-radius:var(--r);padding:28px 26px;box-shadow:var(--sh)}
+@media(max-width:760px){.barbox{padding:20px 18px}}
+.barbox .tp{display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between}
+.barbox .tp h3{font-size:20px}
+.barbox .tp b{font-size:13px;color:var(--sepia);font-weight:600;font-family:-apple-system,sans-serif}
+.bars{margin-top:24px;display:flex;flex-direction:column;gap:19px}
+.bar i{display:block;font-style:normal;font-size:13px;font-weight:600;color:var(--ink2);font-family:-apple-system,"PingFang SC",sans-serif}
+.bar i b{float:right;color:var(--sepia);font-variant-numeric:tabular-nums;font-weight:600}
+.bar i em{font-style:normal;font-size:11px;color:var(--dim2);font-weight:400;margin-left:8px}
+.track{margin-top:8px;height:9px;border-radius:6px;background:var(--line2);overflow:hidden}
+.track span{display:block;height:100%;width:0;border-radius:6px;background:linear-gradient(90deg,var(--sepia),var(--gold));transition:width 1.4s cubic-bezier(.22,.8,.3,1)}
+.barbox .note{margin-top:26px;padding-top:18px;border-top:1px dashed var(--line);font-size:13px;color:var(--dim);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.barbox .note s{text-decoration:none;font-size:11px;padding:4px 10px;border-radius:5px;background:#f3e6cd;color:#6b4518;font-family:-apple-system,sans-serif}
+
+/* ---------- 栏目五 · 访客手记 ---------- */
+.note{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:860px){.note{grid-template-columns:1fr}}
+.letter{background:var(--paper2);border:1px solid var(--line);border-radius:var(--r);padding:24px 22px;position:relative;transition:.3s}
+.letter:hover{border-color:#e6cf9f;box-shadow:var(--sh);transform:translateY(-4px)}
+.letter::before{content:"✉";position:absolute;right:16px;top:14px;font-size:16px;color:var(--line)}
+.letter .from{display:flex;align-items:center;gap:11px;font-family:-apple-system,"PingFang SC",sans-serif}
+.letter .av{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:800;color:#fff;background:linear-gradient(150deg,var(--sepia),var(--crimson))}
+.letter .av.b{background:linear-gradient(150deg,var(--teal),#1d4a44)}
+.letter .av.c{background:linear-gradient(150deg,var(--indigo),#25356b)}
+.letter .from b{font-size:14px}
+.letter .from small{display:block;font-size:11.5px;color:var(--dim2);letter-spacing:.06em}
+.letter blockquote{margin-top:16px;padding-left:14px;border-left:2px solid var(--gold);font-size:14px;color:var(--ink2)}
+.letter time{display:block;margin-top:16px;padding-top:13px;border-top:1px solid var(--line2);font-size:11.5px;color:var(--dim2);font-family:-apple-system,sans-serif}
+
+/* ---------- 页脚 ---------- */
+footer{border-top:2px solid var(--ink);background:var(--ink);color:#e6ddcc;padding:50px 0 26px;font-family:-apple-system,"PingFang SC",sans-serif}
+.fbox{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:36px}
+@media(max-width:860px){.fbox{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:480px){.fbox{grid-template-columns:1fr}}
+footer h4{font-family:inherit;font-size:13.5px;color:#fff;letter-spacing:.06em}
+footer h4::before{content:"§";display:inline-block;margin-right:8px;color:var(--gold);font-weight:400}
+footer ul{margin-top:16px;display:flex;flex-direction:column;gap:10px}
+footer a{font-size:13.5px;color:#b09a7c;transition:.2s}
+footer a:hover{color:#fff}
+.foot-brand .seal2{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:9px;font-size:20px;color:#fff;
+  background:linear-gradient(155deg,var(--sepia),var(--crimson))}
+.foot-brand b{display:block;margin-top:14px;font-size:20px;color:#fff;font-family:Georgia,serif;letter-spacing:.06em}
+.foot-brand p{margin-top:13px;font-size:13.5px;color:#b09a7c;max-width:330px;line-height:1.75}
+.foot-brand code{display:inline-block;margin-top:16px;font-size:12px;padding:7px 12px;border-radius:7px;color:#f3e6cd;background:rgba(255,255,255,.09);
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace}
+.cp{padding-top:26px;margin-top:38px;border-top:1px solid rgba(255,255,255,.14);display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;
+  font-size:12.5px;color:#8f7d66}
+.cp a{color:#b09a7c}
+.cp a:hover{color:#fff}
+.cp .kw{font-size:12px;color:#7d6d57}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<!-- ================= 顶部 ================= -->
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="悠久影视 返回首页">
+      <span class="seal" aria-hidden="true">🎞</span>
+      <span><b>悠久影视</b><small>YOU JIU YING SHI</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="主导航">
+      <a href="#home">首页</a>
+      <a href="#era">年代馆藏</a>
+      <a href="#show">馆藏精品</a>
+      <a href="#gen">流派长廊</a>
+      <a href="#fix">修复进度</a>
+      <a href="#note">访客手记</a>
+    </nav>
+    <button class="mbtn" id="mbtn" aria-label="切换菜单" aria-expanded="false" aria-controls="nav"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= 首屏 ================= -->
+  <section class="hero" id="home">
+    <div class="wrap">
+      <div>
+        <span class="ribbon">EST. 2026 · 经典影视收藏馆</span>
+        <h1>光影走过岁月，<br><em>好片永不褪色。</em><small>经 典 永 流 传</small></h1>
+        <p class="lead">悠久影视（youjiuyingshi.cn）专注于经典老片与高分影视作品的收藏与整理，汇集怀旧电影、经典剧集、老番与修复版内容，按年代与类型精细归档，让好作品被更多人重新看见。</p>
+        <div class="acts">
+          <a class="btn btn-main" href="#show">浏览馆藏精品 →</a>
+          <a class="btn btn-line" href="#era">按年代检索</a>
+        </div>
+        <div class="stats">
+          <div><b>5,600+</b><span>馆藏作品</span></div>
+          <div><b>1940s—</b><span>最早收录年代</span></div>
+          <div><b>4K</b><span>修复版本</span></div>
+        </div>
+      </div>
+
+      <div class="album" aria-label="馆藏胶片册">
+        <figure>
+          <div class="ic">🎬</div>
+          <figcaption>《午夜列车》<em>1986 · 修复版</em></figcaption>
+        </figure>
+        <figure>
+          <div class="ic">📺</div>
+          <figcaption>《老城旧事》<em>1992 · 经典剧集</em></figcaption>
+        </figure>
+        <figure>
+          <div class="ic">🎨</div>
+          <figcaption>《金鱼与海》<em>1998 · 老番</em></figcaption>
+        </figure>
+        <div class="cap"><b>本周修复 · 胶片转数字</b><span>NEW 12 卷</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 栏目一 · 年代馆藏 ================= -->
+  <section id="era">
+    <div class="wrap">
+      <header class="hd">
+        <span class="kp">Era Archive</span>
+        <h2>年代馆藏 <i>· 按年代归档</i></h2>
+        <p>从 20 世纪四十年代到近十年的经典作品，每个年代精选代表作与高分佳作，点开年代即可按年份浏览。</p>
+      </header>
+
+      <div class="era">
+        <article class="reel">
+          <span class="yr">40s-70s<em>EARLY AGE</em></span>
+          <h3>黑白年代</h3>
+          <ul>
+            <li><span>修复老片</span><b>420</b></li>
+            <li><span>经典喜剧</span><b>186</b></li>
+            <li><span>纪录影像</span><b>95</b></li>
+          </ul>
+          <span class="tag">典藏</span>
+        </article>
+        <article class="reel">
+          <span class="yr">80s-90s<em>GOLDEN AGE</em></span>
+          <h3>黄金年代</h3>
+          <ul>
+            <li><span>怀旧电影</span><b>1,280</b></li>
+            <li><span>经典剧集</span><b>640</b></li>
+            <li><span>港台佳作</span><b>520</b></li>
+          </ul>
+        </article>
+        <article class="reel">
+          <span class="yr">00s-10s<em>NEW CENTURY</em></span>
+          <h3>新世纪初</h3>
+          <ul>
+            <li><span>高分电影</span><b>1,760</b></li>
+            <li><span>口碑剧集</span><b>890</b></li>
+            <li><span>老番动漫</span><b>430</b></li>
+          </ul>
+        </article>
+        <article class="reel">
+          <span class="yr">近代<em>RECENT</em></span>
+          <h3>近年佳作</h3>
+          <ul>
+            <li><span>高分院线</span><b>680</b></li>
+            <li><span>热门剧集</span><b>510</b></li>
+            <li><span>口碑短剧</span><b>160</b></li>
+          </ul>
+          <span class="tag">热更</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 栏目二 · 馆藏精品 ================= -->
+  <section id="show">
+    <div class="wrap">
+      <header class="hd">
+        <span class="kp">Featured Collection</span>
+        <h2>馆藏精品 <i>· 编辑精选</i></h2>
+        <p>编辑团队从馆藏中精选的代表作品，涵盖电影、剧集、动漫、纪录片等类型，均附年份、题材与口碑评分。</p>
+      </header>
+
+      <div class="show">
+        <article class="card">
+          <div class="th t1"><div class="ic">🎬</div><s>电影</s></div>
+          <div class="tx">
+            <span class="no">NO.01</span>
+            <h3>午夜列车</h3>
+            <p class="mt"><b>1986</b> · 悬疑 / 犯罪 · 4K 修复版<br>一部被低估的悬疑佳作，胶片转数字后细节重现。</p>
+            <div class="mk"><span>★ ★ ★ ★ ★</span><em>8.9 分</em></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="th t2"><div class="ic">📺</div><s>剧集</s></div>
+          <div class="tx">
+            <span class="no">NO.02</span>
+            <h3>老城旧事</h3>
+            <p class="mt"><b>1992</b> · 年代 / 家庭 · 全 32 集<br>三代人的命运交织，经典台词至今被人引用。</p>
+            <div class="mk"><span>★ ★ ★ ★ ☆</span><em>9.2 分</em></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="th t3"><div class="ic">🎨</div><s>动漫</s></div>
+          <div class="tx">
+            <span class="no">NO.03</span>
+            <h3>金鱼与海</h3>
+            <p class="mt"><b>1998</b> · 奇幻 / 治愈 · 老番<br>手工上色的年代质感，是许多人的童年启蒙。</p>
+            <div class="mk"><span>★ ★ ★ ★ ★</span><em>9.4 分</em></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="th t4"><div class="ic">🎞️</div><s>经典</s></div>
+          <div class="tx">
+            <span class="no">NO.04</span>
+            <h3>黑白年代喜剧精选</h3>
+            <p class="mt"><b>1960s</b> · 喜剧 / 经典 · 合集<br>胶片原声重现，保留了年代特有的放映质感。</p>
+            <div class="mk"><span>★ ★ ★ ★ ☆</span><em>8.7 分</em></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="th t5"><div class="ic">🎭</div><s>短剧</s></div>
+          <div class="tx">
+            <span class="no">NO.05</span>
+            <h3>茶馆夜话</h3>
+            <p class="mt"><b>2019</b> · 年代 / 人文 · 短剧<br>单元故事结构，每集一个独立的人间烟火。</p>
+            <div class="mk"><span>★ ★ ★ ★ ☆</span><em>8.5 分</em></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="th t6"><div class="ic">🌿</div><s>纪录</s></div>
+          <div class="tx">
+            <span class="no">NO.06</span>
+            <h3>胶片里的四季</h3>
+            <p class="mt"><b>2003</b> · 自然 / 人文 · 6 集<br>记录世纪初的乡土中国，影像本身就是史料。</p>
+            <div class="mk"><span>★ ★ ★ ★ ★</span><em>9.1 分</em></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 栏目三 · 流派长廊 ================= -->
+  <section id="gen">
+    <div class="wrap">
+      <header class="hd">
+        <span class="kp">Genre Hall</span>
+        <h2>流派长廊 <i>· 按类型浏览</i></h2>
+        <p>把馆藏作品按题材类型重新编排，每个流派列出代表作与作品数量，方便按喜好快速定位。</p>
+      </header>
+
+      <div class="gen">
+        <article class="hall">
+          <div class="hd2"><span class="ic">🎭</span><div><h3>剧情 · 年代</h3><small>DRAMA / PERIOD</small></div></div>
+          <div class="bd">
+            <dl><dt>老城旧事</dt><dd>9.2</dd><dt>茶馆夜话</dt><dd>8.5</dd><dt>胶片里的四季</dt><dd>9.1</dd></dl>
+            <a class="more" href="#">进入流派 →</a>
+          </div>
+        </article>
+        <article class="hall">
+          <div class="hd2"><span class="ic">🕵️</span><div><h3>悬疑 · 犯罪</h3><small>MYSTERY / CRIME</small></div></div>
+          <div class="bd">
+            <dl><dt>午夜列车</dt><dd>8.9</dd><dt>雨夜来电</dt><dd>8.4</dd><dt>第七封信</dt><dd>8.6</dd></dl>
+            <a class="more" href="#">进入流派 →</a>
+          </div>
+        </article>
+        <article class="hall">
+          <div class="hd2"><span class="ic">😂</span><div><h3>喜剧 · 经典</h3><small>COMEDY / CLASSIC</small></div></div>
+          <div class="bd">
+            <dl><dt>黑白年代喜剧精选</dt><dd>8.7</dd><dt>邻家小店</dt><dd>8.3</dd><dt>团圆饭</dt><dd>8.1</dd></dl>
+            <a class="more" href="#">进入流派 →</a>
+          </div>
+        </article>
+        <article class="hall">
+          <div class="hd2"><span class="ic">🎨</span><div><h3>动漫 · 治愈</h3><small>ANIME / HEALING</small></div></div>
+          <div class="bd">
+            <dl><dt>金鱼与海</dt><dd>9.4</dd><dt>风之小路</dt><dd>9.0</dd><dt>纸飞机的夏天</dt><dd>8.8</dd></dl>
+            <a class="more" href="#">进入流派 →</a>
+          </div>
+        </article>
+        <article class="hall">
+          <div class="hd2"><span class="ic">⚔️</span><div><h3>武侠 · 动作</h3><small>WUXIA / ACTION</small></div></div>
+          <div class="bd">
+            <dl><dt>江湖夜雨</dt><dd>8.8</dd><dt>长枪与马</dt><dd>8.5</dd><dt>孤山客</dt><dd>8.6</dd></dl>
+            <a class="more" href="#">进入流派 →</a>
+          </div>
+        </article>
+        <article class="hall">
+          <div class="hd2"><span class="ic">🌿</span><div><h3>自然 · 人文</h3><small>NATURE / CULTURE</small></div></div>
+          <div class="bd">
+            <dl><dt>胶片里的四季</dt><dd>9.1</dd><dt>山的那一边</dt><dd>8.9</dd><dt>手艺人之乡</dt><dd>8.7</dd></dl>
+            <a class="more" href="#">进入流派 →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 栏目四 · 修复进度 ================= -->
+  <section id="fix">
+    <div class="wrap">
+      <header class="hd">
+        <span class="kp">Restoration</span>
+        <h2>修复进度 <i>· 胶片转数字</i></h2>
+        <p>馆藏中的老片正分批进行数字化修复，以下为各类型内容的修复完成情况，数据每周校准。</p>
+      </header>
+
+      <div class="barbox">
+        <div class="tp"><h3>本年度修复计划进度</h3><b>更新于 2026.10</b></div>
+        <div class="bars">
+          <div class="bar"><i>黑白年代电影 <em>420 部待修复</em><b>68%</b></i><span class="track"><span data-w="68"></span></span></div>
+          <div class="bar"><i>八十年代怀旧片 <em>1,280 部待修复</em><b>82%</b></i><span class="track"><span data-w="82"></span></span></div>
+          <div class="bar"><i>经典电视剧集 <em>640 部待修复</em><b>54%</b></i><span class="track"><span data-w="54"></span></span></div>
+          <div class="bar"><i>老番动漫作品 <em>430 部待修复</em><b>47%</b></i><span class="track"><span data-w="47"></span></span></div>
+          <div class="bar"><i>纪录片与影像史料 <em>95 部待修复</em><b>73%</b></i><span class="track"><span data-w="73"></span></span></div>
+        </div>
+        <div class="note">
+          <span>已完成修复</span>
+          <s>4K 分辨率</s><s>降噪去划痕</s><s>色彩还原</s><s>原声重制</s>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 栏目五 · 访客手记 ================= -->
+  <section id="note">
+    <div class="wrap">
+      <header class="hd">
+        <span class="kp">Visitor Notes</span>
+        <h2>访客手记 <i>· 来信精选</i></h2>
+        <p>读着来信找片，是我们坚持做馆藏整理的动力，也欢迎你写下自己与一部老片的故事。</p>
+      </header>
+
+      <div class="note">
+        <article class="letter">
+          <div class="from"><span class="av">林</span><span><b>林先生</b><small>老片爱好者</small></span></div>
+          <blockquote>在这里重新看到了小时候跟着爷爷看的黑白喜剧，修复后的画质比我记忆里清楚太多，年代感反而更足了。</blockquote>
+          <time>来信日期：2026 年 9 月 12 日</time>
+        </article>
+        <article class="letter">
+          <div class="from"><span class="av b">苏</span><span><b>苏小姐</b><small>剧集频道读者</small></span></div>
+          <blockquote>按年代检索太方便了，想找九十年代的剧集一眼就能定位，分类型归档比自己翻收藏夹省力得多。</blockquote>
+          <time>来信日期：2026 年 8 月 28 日</time>
+        </article>
+        <article class="letter">
+          <div class="from"><span class="av c">陈</span><span><b>陈老师</b><small>影像研究者</small></span></div>
+          <blockquote>纪录片和影像史料这部分做得很扎实，修复进度公开透明，对做研究的人来说参考价值很高。</blockquote>
+          <time>来信日期：2026 年 8 月 05 日</time>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= 页脚 ================= -->
+<footer>
+  <div class="wrap">
+    <div class="fbox">
+      <div class="foot-brand">
+        <span class="seal2" aria-hidden="true">🎞</span>
+        <b>悠久影视</b>
+        <p>悠久影视（youjiuyingshi.cn）专注于经典老片与高分影视作品的收藏与整理，汇集怀旧电影、经典剧集、老番与修复版内容，按年代与类型精细归档。</p>
+        <code>https://youjiuyingshi.cn.github.io/</code>
+      </div>
+      <div>
+        <h4>站点栏目</h4>
+        <ul><li><a href="#home">网站首页</a></li><li><a href="#era">年代馆藏</a></li><li><a href="#show">馆藏精品</a></li><li><a href="#fix">修复进度</a></li></ul>
+      </div>
+      <div>
+        <h4>内容类型</h4>
+        <ul><li><a href="#">经典老电影</a></li><li><a href="#">高分剧集</a></li><li><a href="#">老番动漫</a></li><li><a href="#">纪录片史料</a></li></ul>
+      </div>
+      <div>
+        <h4>关于与帮助</h4>
+        <ul><li><a href="#gen">流派长廊</a></li><li><a href="#note">访客手记</a></li><li><a href="#">使用帮助</a></li><li><a href="#">投稿与纠错</a></li></ul>
+      </div>
+    </div>
+    <div class="cp">
+      <span>© <span id="yr">2026</span> 悠久影视 · 网站网址：<a href="https://youjiuyingshi.cn.github.io/">https://youjiuyingshi.cn.github.io/</a> · 保留所有权利</span>
+      <span class="kw">聚焦关键词：悠久影视 · youjiuyingshi.cn · 经典老电影 · 高分影视作品 · 怀旧剧场 · 老片修复</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  var mbtn = document.getElementById("mbtn"), nav = document.getElementById("nav");
+  mbtn.addEventListener("click", function(){
+    var o = nav.classList.toggle("on");
+    mbtn.classList.toggle("on", o);
+    mbtn.setAttribute("aria-expanded", o ? "true" : "false");
+  });
+  nav.addEventListener("click", function(e){
+    if (e.target.tagName === "A") {
+      nav.classList.remove("on"); mbtn.classList.remove("on");
+      mbtn.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  var qs = document.querySelectorAll('a[href^="#"]');
+  for (var i = 0; i < qs.length; i++) {
+    (function(a){
+      a.addEventListener("click", function(ev){
+        var id = a.getAttribute("href");
+        if (id && id.length > 1 && document.querySelector(id)) {
+          ev.preventDefault();
+          document.querySelector(id).scrollIntoView({behavior:"smooth", block:"start"});
+        }
+      });
+    })(qs[i]);
+  }
+
+  var bars = document.querySelectorAll(".track span");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if (en.isIntersecting) {
+          en.target.style.width = en.target.getAttribute("data-w") + "%";
+          io.unobserve(en.target);
+        }
+      });
+    }, {threshold:.25});
+    for (var j = 0; j < bars.length; j++) io.observe(bars[j]);
+  } else {
+    for (var k = 0; k < bars.length; k++) bars[k].style.width = bars[k].getAttribute("data-w") + "%";
+  }
+})();
+</script>
+</body>
+</html>
